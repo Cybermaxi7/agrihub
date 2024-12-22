@@ -18,7 +18,7 @@ const PostBySlug = async ({
   console.log(post);
   return (
     <div className="text-black py-24 sm:py-32 flex flex-col flex-center w-full">
-      <div className="h-full w-full flex flex-1 container mx-auto flex-col">
+      <div className="h-full w-full flex flex-1 container mx-auto flex-col p-4 md:p-2">
         <Label className="text-5xl max-w-4xl tracking-tighter font-bold uppercase font-heading">
           {post.title}
         </Label>
@@ -44,7 +44,7 @@ const PostBySlug = async ({
             className="w-full h-full object-center object-cover rounded-lg"
           />
         </div>
-        <article className="prose lg:prose-lg pt-6 ">
+        <article className="prose lg:prose-lg pt-6 mx-auto px-6">
           <PortableText value={post.content} />
         </article>
       </div>
