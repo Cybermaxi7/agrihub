@@ -31,7 +31,7 @@ const Navbar = () => {
       )}
     >
       <div className="container w-full mx-auto flex justify-between items-center p-4 overflow-x-hidden">
-        <div className={"rounded-full bg-white flex flex-center w-12 h-12"}>
+        <Link href="/" className={"rounded-full bg-white flex flex-center w-12 h-12"}>
           <Image
             src={"/images/logo.png"}
             width={74}
@@ -39,7 +39,7 @@ const Navbar = () => {
             alt={"Logo for agrihub"}
             className={"rounded-full"}
           />
-        </div>
+        </Link>
         <nav className={"hidden md:flex font-heading uppercase"}>
           <ul className="flex space-x-4">
             <li>

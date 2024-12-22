@@ -39,7 +39,8 @@ const MobileNav = () => {
         className="w-[250px] bg-green-700/70 bg-opacity-90 backdrop-blur-sm"
       >
         <SheetHeader className="pt-16 flex-center">
-          <div
+          <Link
+            href="/"
             className={
               "rounded-full bg-white flex flex-center w-12 h-12 absolute top-4 left-4"
             }
@@ -51,7 +52,7 @@ const MobileNav = () => {
               alt={"Logo for agrihub"}
               className={"rounded-full"}
             />
-          </div>
+          </Link>
 
           <nav className="flex flex-col font-heading uppercase space-y-4 items-center">
             {navLinks.map((link) => (
