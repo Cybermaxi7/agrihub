@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const HeroAbout = () => {
   return (
-    <div className={"text-gray-950 container mx-auto p-4"}>
+    <section id="hero-about" className={"text-gray-950 container mx-auto p-4"}>
       <div
         className={
           "my-5 md:my-10 flex-between items-start flex-col md:flex-row gap-5 md:gap-20 "
@@ -37,7 +37,7 @@ const HeroAbout = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default HeroAbout;

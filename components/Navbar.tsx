@@ -11,36 +11,27 @@ const Navbar = () => {
   const isInvalid: boolean = usePath();
 
   const getLinkClasses = (path: string) => {
-    return `hover:font-bold text-white transit transition-colors duration-300 whitespace-nowrap text-sm ${
+    return `hover:font-bold text-white transit transition-colors duration-300 whitespace-nowrap !text-sm ${
       pathname === path ? "font-bold border-b-2 border-white" : ""
     }`;
   };
   if (isInvalid) return <></>;
   return (
-    <header
-      className={clsx(
-        "w-full text-white absolute top-0 left-0 z-50 bg-green-500",
-        {
-          "bg-transparent": pathname === "/",
-          "bg-green-500 shadow-mg": pathname !== "/",
-        }
-        // {
-        //   "bg-transparent": pathname === "/",
-        //   "bg-green-500 shadow-mg": pathname !== "/",
-        // }
-      )}
-    >
-      <div className="container w-full mx-auto flex justify-between items-center p-4 overflow-x-hidden">
-        <Link href="/" className={"rounded-full bg-white flex flex-center w-12 h-12"}>
+    <header className="w-full text-white fixed top-0 left-0 z-50 bg-green-500/80">
+      <div className="container w-full mx-auto flex justify-between items-center p-2 overflow-x-hidden">
+        <Link
+          href="/"
+          className={"rounded-full bg-white flex flex-center w-9 h-9"}
+        >
           <Image
             src={"/images/logo.png"}
-            width={74}
-            height={29}
+            width={50}
+            height={20}
             alt={"Logo for agrihub"}
             className={"rounded-full"}
           />
         </Link>
-        <nav className={"hidden md:flex font-heading uppercase"}>
+        <nav className={"hidden md:flex font-heading"}>
           <ul className="flex space-x-4">
             <li>
               <Link href="/" className={getLinkClasses("/")}>
@@ -56,7 +47,7 @@ const Navbar = () => {
               <Link href="/blog" className={getLinkClasses("/blog")}>
                 Blog
               </Link>
-            </li>{" "}
+            </li>
             <li>
               <Link
                 href="/contact-us"

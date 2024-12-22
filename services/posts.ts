@@ -1,6 +1,8 @@
 import { client } from "@/sanity/lib/client";
 import { SanityTypes } from "@/@types";
 
+// export const revalidate = 60; Revalidate api calls every 60 seconds
+
 export const getAllPosts = async (): Promise<SanityTypes.Post[]> => {
   const query = `
   *[_type == "post"] | order(_createdAt desc)`;

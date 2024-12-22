@@ -1,11 +1,50 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Label } from "@/components/ui/label";
+import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { getPostBySlug } from "@/services/posts";
+import { site } from "@/site";
 import { CalendarIcon } from "lucide-react";
+import { Metadata } from "next";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import React from "react";
+
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
+  const decodedSlug = decodeURIComponent(params.slug);
+
+  const query = `
+    *[_type == "post" && slug.current ==  $slug] {
+    _id,
+    title,
+    description,
+    image 
+    }[0]`;
+
+  const data = await client.fetch(query, { slug: decodedSlug });
+  return {
+    applicationName: "AgriHub",
+    creator: data.author,
+    metadataBase: new URL(site.url),
+    title: data.title,
+    description: data.description,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+      images: urlFor(data.image).url(),
+      type: "article",
+      locale: "en_NG",
+    },
+    authors: [{ name: data.author }],
+  };
+}
 
 const PostBySlug = async ({
   params: { slug },
