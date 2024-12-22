@@ -2,26 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-open-sans: 'Open Sans', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
   }
+
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Usage examples */
+.font-heading {
+  font-family: var(--font-montserrat);
+
 }
 
+.font-body {
+  font-family: var(--font-open-sans);
+}
+
+.font-accent {
+  font-family: var(--font-roboto);
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.transit {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+
+
+.bg-image {
+  @apply w-full h-full bg-cover bg-center bg-no-repeat overflow-hidden;
+}
+
+.bg-image-full {
+  @apply absolute inset-0 z-[-1] bg-cover  bg-center bg-no-repeat overflow-x-hidden;
+}
+
+.bg-overlay {
+  @apply relative overflow-hidden;
+}
+
+.bg-overlay::before {
+  @apply absolute inset-0 bg-black/20 z-[1];
+  content: '';
+}
+
+.transit {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.bg-blur {
+  @apply backdrop-blur-sm;
+}
+
+.custom-scroll {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(156 163 175) transparent;
+  -ms-overflow-style: none;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: rgb(156 163 175);
+  border-radius: 20px;
+}
+
+/* If you want to hide scrollbar completely */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .get-app {
+    @apply container mx-auto relative flex w-full  flex-col justify-between gap-32 overflow-hidden bg-[#292C27] bg-pattern bg-cover bg-center bg-no-repeat px-6 py-12 text-white sm:flex-row sm:gap-12 sm:py-24 lg:px-20 xl:max-h-[598px] 2xl:rounded-[64px];
   }
 }
