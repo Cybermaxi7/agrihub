@@ -33,7 +33,7 @@ const About = () => {
               <Link
                 href="https://chat.whatsapp.com/GlNonP6ayquCEbVhhwN5Bn"
                 className={
-                  "bg-green-600 text-white px-4 py-2 hover:bg-green-700/50 transit flex flex-center gap-2 text-xs md:text-sm w-fit mt-4 rounded"
+                  "bg-green-600 text-white px-4 py-2 hover:bg-green-700/50 transit flex flex-center gap-2 text-sm md:text-lg w-fit mt-4 rounded"
                 }
               >
                 <FaHandshake />

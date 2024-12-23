@@ -67,7 +67,7 @@ const Hero = () => {
             <Link
               href="https://chat.whatsapp.com/GlNonP6ayquCEbVhhwN5Bn"
               className={
-                "text-green-700 bg-white flex px-2 flex-center gap-2 text-xs md:text-sm hover:bg-green-600 hover:text-white transit"
+                "text-green-700 bg-white flex px-2 py-2 flex-center gap-2 text-xs md:text-sm hover:bg-green-600 hover:text-white transit"
               }
             >
               <FaHandshake />

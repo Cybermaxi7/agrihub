@@ -57,8 +57,8 @@ const PostBySlug = async ({
   console.log(post);
   return (
     <div className="text-black py-24 sm:py-32 flex flex-col flex-center w-full">
-      <div className="h-full w-full flex flex-1 container mx-auto flex-col p-4 md:p-2">
-        <Label className="text-5xl max-w-4xl tracking-tighter font-bold uppercase font-heading">
+      <div className="h-full w-full flex flex-1 container mx-auto flex-col p-4 md:p-2 gap-3">
+        <Label className="text-4xl max-w-4xl tracking-tighter font-bold uppercase font-heading text-wrap">
           {post.title}
         </Label>
         <div className="flex flex-row items-center space-x-3 pb-2">
