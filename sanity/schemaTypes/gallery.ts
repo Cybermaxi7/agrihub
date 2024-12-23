@@ -20,6 +20,14 @@ export default {
       validation: (rule) => rule.max(300), // Optional field with max length
     }),
     defineField({
+      name: "banner",
+      title: "Banner Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: "images",
       title: "Gallery Images",
       description: "Add up to 10 images to this gallery",

@@ -44,10 +44,38 @@ export const getAllEvents = async (): Promise<SanityTypes.Event[]> => {
 
   return await client.fetch(query);
 };
-export const getGallery = async (): Promise<SanityTypes.Gallery | null> => {
+export const getGalleries = async (): Promise<SanityTypes.Gallery[]> => {
   try {
     const query = `
-    *[_type == "gallery"][0] {
+    *[_type == "gallery"] {
+      _id,
+      _createdAt,
+      _updatedAt,
+      title,
+      description,
+      banner,
+      "images": images[] {
+        "url": asset->url,
+        "alt": alt,
+        asset
+      }
+    }`;
+
+    const result = await client.fetch(query);
+    console.log("Sanity Galleries Query Result:", result); // Debug log
+    return result;
+  } catch (error) {
+    console.error("Error fetching galleries:", error);
+    return [];
+  }
+};
+
+export const getGalleryById = async (
+  galleryId: string
+): Promise<SanityTypes.Gallery | null> => {
+  try {
+    const query = `
+    *[_type == "gallery" && _id == $galleryId][0] {
       _id,
       _createdAt,
       _updatedAt,
@@ -60,11 +88,11 @@ export const getGallery = async (): Promise<SanityTypes.Gallery | null> => {
       }
     }`;
 
-    const result = await client.fetch(query);
-    console.log("Sanity Query Result:", result); // Debug log
+    const result = await client.fetch(query, { galleryId });
+    console.log("Sanity Single Gallery Query Result:", result); // Debug log
     return result;
   } catch (error) {
-    console.error("Error fetching gallery:", error);
+    console.error(`Error fetching gallery with ID ${galleryId}:`, error);
     return null;
   }
 };

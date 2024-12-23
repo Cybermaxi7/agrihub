@@ -35,6 +35,7 @@ export namespace SanityTypes {
     _updatedAt?: string;
     title: string;
     description: string;
+    banner: SanityImageAssetDocument;
     images: SanityImageAssetDocument[];
   }
 }
