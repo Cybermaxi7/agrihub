@@ -16,6 +16,10 @@ const nextConfig = {
     // your project has type errors.
     ignoreBuildErrors: true,
   },
+  env: {
+    ADMIN_USERNAME: process.env.ADMIN_USERNAME,
+    ADMIN_PASSWORD: process.env.ADMIN_PASSWORD,
+  },
 };
 
 export default nextConfig;

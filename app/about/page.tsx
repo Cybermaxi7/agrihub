@@ -1,8 +1,9 @@
 import React from "react";
-import { aboutBenefits, aboutStats, aboutTeam, aboutValues } from "@/lib/data";
-import { CheckCircleIcon } from "lucide-react";
 import WhoWeAre from "@/components/WhoWeAre";
 import OurMission from "@/components/OurMission";
+import Link from "next/link";
+import { FaHandshake } from "react-icons/fa6";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -10,45 +11,15 @@ const About = () => {
       <WhoWeAre />
       <OurMission />
 
-      {/* Team Section */}
-      <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">
-            Our team
-          </h2>
-          <p className="mt-6 text-lg/8 text-gray-300">
-            We’re a dynamic group of individuals who are passionate about what
-            we do and dedicated to delivering the best results for our clients.
-          </p>
-        </div>
-        <ul
-          role="list"
-          className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
-        >
-          {aboutTeam.map((person) => (
-            <li key={person.name}>
-              <img
-                alt=""
-                src={person.imageUrl}
-                className="aspect-14/13 w-full rounded-2xl object-cover"
-              />
-              <h3 className="mt-6 text-lg/8 font-semibold tracking-tight text-white">
-                {person.name}
-              </h3>
-              <p className="text-base/7 text-gray-300">{person.role}</p>
-              <p className="text-sm/6 text-gray-500">{person.location}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-
       {/* CTA Section */}
       <div className="relative isolate -z-10 mt-32 sm:mt-40">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-white/5 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
-            <img
+            <Image
               alt=""
-              src="https://images.unsplash.com/photo-1519338381761-c7523edc1f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+              src="/images/pinnn.jpeg"
+              width={800}
+              height={800}
               className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
             />
             <div className="w-full flex-auto">
@@ -59,20 +30,15 @@ const About = () => {
                 Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
                 magnam voluptatum cupiditate veritatis in accusamus quisquam.
               </p>
-              <ul
-                role="list"
-                className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-black sm:grid-cols-2"
+              <Link
+                href="https://chat.whatsapp.com/GlNonP6ayquCEbVhhwN5Bn"
+                className={
+                  "bg-green-600 text-white px-4 py-2 hover:bg-green-700/50 transit flex flex-center gap-2 text-xs md:text-sm w-fit mt-4 rounded"
+                }
               >
-                {aboutBenefits.map((benefit) => (
-                  <li key={benefit} className="flex gap-x-3">
-                    <CheckCircleIcon
-                      aria-hidden="true"
-                      className="h-7 w-5 flex-none"
-                    />
-                    {benefit}
-                  </li>
-                ))}
-              </ul>
+                <FaHandshake />
+                Connect with us
+              </Link>
             </div>
           </div>
         </div>

@@ -19,4 +19,14 @@ export namespace SanityTypes {
     name: string;
     image: T;
   }
+  export interface Event {
+    _id: string;
+    _createdAt: string;
+    _updatedAt?: string;
+    title: string;
+    description: string;
+    image: SanityImageAssetDocument;
+    dateTime: string;
+    registrationLink: string;
+  }
 }

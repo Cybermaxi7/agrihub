@@ -44,6 +44,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
+              <Link href="/event" className={getLinkClasses("/event")}>
+                Events
+              </Link>
+            </li>
+            <li>
               <Link href="/blog" className={getLinkClasses("/blog")}>
                 Blog
               </Link>

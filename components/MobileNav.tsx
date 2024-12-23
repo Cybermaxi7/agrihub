@@ -25,6 +25,7 @@ const MobileNav = () => {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
+    { href: "/event", label: "Events" },
     { href: "/blog", label: "Blog" },
     { href: "/contact-us", label: "Contact Us" },
   ];

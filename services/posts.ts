@@ -29,3 +29,18 @@ export const getPostBySlug = async (
 
   return await client.fetch(query, { slug });
 };
+export const getAllEvents = async (): Promise<SanityTypes.Event[]> => {
+  const query = `
+  *[_type == "event"] | order(dateTime asc) {
+    _id,
+    _createdAt,
+    _updatedAt,
+    title,
+    description,
+    image,
+    dateTime,
+    registrationLink
+  }`;
+
+  return await client.fetch(query);
+};
