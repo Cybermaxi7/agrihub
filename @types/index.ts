@@ -29,4 +29,12 @@ export namespace SanityTypes {
     dateTime: string;
     registrationLink: string;
   }
+  export interface Gallery {
+    _id: string;
+    _createdAt: string;
+    _updatedAt?: string;
+    title: string;
+    description: string;
+    images: SanityImageAssetDocument[];
+  }
 }

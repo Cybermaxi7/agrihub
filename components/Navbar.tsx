@@ -49,6 +49,11 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
+              <Link href="/gallery" className={getLinkClasses("/gallery")}>
+                Gallery
+              </Link>
+            </li>
+            <li>
               <Link href="/blog" className={getLinkClasses("/blog")}>
                 Blog
               </Link>

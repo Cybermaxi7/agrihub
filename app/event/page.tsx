@@ -9,7 +9,6 @@ import React from "react";
 
 const Events = async () => {
   const data = await getAllEvents();
-  console.log(data);
   // const events = [
   //   {
   //     title: "Tech Conference 2024",

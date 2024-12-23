@@ -52,9 +52,7 @@ const PostBySlug = async ({
   params: { slug: string };
 }) => {
   const decodedSlug = decodeURIComponent(slug);
-  console.log(decodedSlug);
   const post = await getPostBySlug(decodedSlug);
-  console.log(post);
   return (
     <div className="text-black py-24 sm:py-32 flex flex-col flex-center w-full">
       <div className="h-full w-full flex flex-1 container mx-auto flex-col p-4 md:p-2 gap-3">

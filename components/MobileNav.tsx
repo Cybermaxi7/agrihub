@@ -26,6 +26,7 @@ const MobileNav = () => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/event", label: "Events" },
+    { href: "/gallery", label: "Gallery" },
     { href: "/blog", label: "Blog" },
     { href: "/contact-us", label: "Contact Us" },
   ];

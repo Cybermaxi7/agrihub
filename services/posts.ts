@@ -44,3 +44,27 @@ export const getAllEvents = async (): Promise<SanityTypes.Event[]> => {
 
   return await client.fetch(query);
 };
+export const getGallery = async (): Promise<SanityTypes.Gallery | null> => {
+  try {
+    const query = `
+    *[_type == "gallery"][0] {
+      _id,
+      _createdAt,
+      _updatedAt,
+      title,
+      description,
+      "images": images[] {
+        "url": asset->url,
+        "alt": alt,
+        asset
+      }
+    }`;
+
+    const result = await client.fetch(query);
+    console.log("Sanity Query Result:", result); // Debug log
+    return result;
+  } catch (error) {
+    console.error("Error fetching gallery:", error);
+    return null;
+  }
+};
